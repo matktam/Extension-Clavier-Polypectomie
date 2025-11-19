@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Clavier</title>
+
+    <!-- Importation de la police 'Inter' depuis Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+
+    <style>
+      body {
+        font-family: "Inter", Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #1f202a;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      .keyboard {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Espace entre les rangées */
+        padding: 15px;
+        background-color: #2c2d3a;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 900px;
+        box-sizing: border-box;
+      }
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px; /* Espace entre les boutons */
+        justify-content: center;
+      }
+      
+      button {
+        padding: 8px 12px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        /* Fond des boutons (plus clair) */
+        background-color: #404258;
+        /* Texte clair pour le contraste */
+        color: #e2e2e8;
+        border-radius: 4px;
+        transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+        min-width: 40px;
+        text-align: center;
+        /* Ombre plus subtile pour le thème sombre */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+      }
+      button:hover {
+        transform: translateY(-3px);
+        background-color: #4a4c63;
+        box-shadow: 0 5px 5px rgba(24, 145, 232, 0.15);
+      }
+      button:active {
+       transform: translateY(1px);
+        /* Légèrement plus foncé au clic */
+        background-color: #3a3c50;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        filter: none; /* Pas besoin de brightness */
+      }
+
+      /* Styles spécifiques pour les boutons colorés */
+      .btn-yellow {
+        background-color: #ffde00;
+        color: #333;
+        border-color: #c7b000;
+      }
+      .btn-con-og {
+        background-color: #6c9eef;
+        color: white;
+        border-color: #4a7cca;
+      }
+      .btn-con-ih {
+        background-color: #a3bde5;
+        color: white;
+        border-color: #7d9bc6;
+      }
+      .btn-con-is {
+        background-color: #000080;
+        color: white;
+        border-color: #00005a;
+      }
+      .btn-con-iia {
+        background-color: #008080;
+        color: white;
+        border-color: #005a5a;
+      }
+      .btn-con-iic {
+        background-color: #ffa500;
+        color: white;
+        border-color: #cc8400;
+      }
+      .btn-con-iic-plus {
+        background-color: #d2691e;
+        color: white;
+        border-color: #a65318;
+      }
+      .btn-con-iii {
+        background-color: #dc143c;
+        color: white;
+        border-color: #b01030;
+      }
+
+      /* Style pour les boutons plus larges */
+      .btn-large {
+        flex-grow: 1;
+        padding: 8px 30px;
+      }
+      .btn-small-text {
+        font-size: 12px;
+        padding: 4px 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="keyboard">
+      <!-- Première rangée -->
+      <div class="button-row">
+        <button class="btn-large">Entrée</button>
+        <button class="btn-small-text">espace</button>
+      </div>
+      <!-- Deuxième rangée -->
+      <div class="button-row">
+        <button data-text="- Cæcum :">Cæcum</button>
+        <button data-text="- Valvule :">Valvule</button>
+        <button data-text="- Côlon droit :">C. droit</button>
+        <button data-text="- Angle colique droit :">A. droit</button>
+        <button data-text="- Côlon transverse :">Transverse</button>
+        <button data-text="- Angle colique gauche :">A. gauche</button>
+        <button data-text="- Côlon gauche :">C. gauche</button>
+        <button data-text="- Sigmoïde :">Sigmoïde</button>
+        <button data-text="- Rectum :">Rectum</button>
+        <button data-text="- Anus :">Anus</button>
+      </div>
+      <!-- Troisième rangée -->
+      <div class="button-row">
+        <button data-text="Exérèse à l' anse froide de manière macroscopiquement complète d'"">froide</button>
+        <button data-text="Exérèse à l' anse chaude de manière macroscopiquement complète d'">chaude</button>
+        <button data-text="Exérèse par mucosectomie de manière macroscopiquement complète d'">muco</button>
+        <button data-text="Exérèse en piecemeal de manière macroscopiquement complète d'">piecemeal</button>
+        <button data-text="Exérèse par dissection sous-muqueuse de manière macroscopiquement complète d'">ESD</button>
+        <span class="esps"></span>
+        <span class="esps"></span>
+      </div>
+      <div class="button-row">
+        <button data-text="un polype de">Polype</button>
+        <span class="esps"></span>
+        <span class="esps"></span>
+        <button data-text="une LST-G de">LST-G</button>
+        <button data-text="une LST-NG de">LST-NG</button>
+      </div>
+      <!-- Quatrième rangée -->
+      <div class="button-row">
+        <button data-text="1">1</button>
+        <button data-text="2">2</button>
+        <button data-text="3">3</button>
+        <button data-text="4">4</button>
+        <button data-text="5">5</button>
+        <button data-text="6">6</button>
+        <button data-text="7">7</button>
+        <button data-text="8">8</button>
+        <button data-text="9">9</button>
+        <button data-text="0">0</button>
+        <span class="esps"></span>
+        <span class="esps"></span>
+        <button data-text="mm">mm</button>
+        <button data-text="cm">cm</button>
+        <span class="esps"></span>
+        <span class="esps"></span>
+        <button data-text="-">-</button>
+        <button data-text="+">+</button>
+        <button data-text="(">(</button>
+        <button data-text=")">)</button>
+      </div>
+      <!-- Cinquième rangée -->
+      <div class="button-row">
+        <button data-text="0-Ip">Ip</button>
+        <button data-text="0-Isp">Isp</button>
+        <button data-text="0-Is">Is</button>
+        <button data-text="0-IIa">IIa</button>
+        <button data-text="0-IIb">IIb</button>
+        <button data-text="0-IIc">IIc</button>
+        <button data-text="0-III">III</button>
+        <span class="esps"></span>
+        <span class="esps"></span>
+        <button data-text="Nice 1,">Nice 1</button>
+        <button data-text="Nice 2,">Nice 2</button>
+        <button data-text="Nice 3,">Nice 3</button>
+      </div>
+      <!-- Sixième rangée (Boutons colorés) -->
+      <div class="button-row">
+        <button class="btn-yellow" data-text="CONECCT OE">OE</button>
+        <button class="btn-con-og" data-text="CONECCT OG">OG</button>
+        <button class="btn-con-ih" data-text="CONECCT IH">IH</button>
+        <button class="btn-con-is" data-text="CONECCT IS">IS</button>
+        <button class="btn-con-iia" data-text="CONECCT IIA">
+          IIA
+        </button>
+        <span class="esps"></span>
+        <span class="esps"></span>
+        <button class="btn-con-iic" data-text="CONECCT IIC">
+          IIC
+        </button>
+        <button class="btn-con-iic-plus" data-text="CONECCT IIC+">
+          IIC+
+        </button>
+        <span class="esps"></span>
+        <span class="esps"></span>
+        <button class="btn-con-iii" data-text="CONECCT III">
+          III
+        </button>
+      </div>
+      <!-- Septième rangée -->
+      <div class="button-row">
+        <button data-text="Clip(s)">Clip(s)</button>
+        <button class="btn-large">Entrée</button>
+      </div>
+    </div>
+
+    <!-- Script externe -->
+    <script src="mk_ext_clavier.js"></script>
+  </body>
+</html>
