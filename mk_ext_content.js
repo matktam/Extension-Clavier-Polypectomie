@@ -19,7 +19,7 @@
 
   // Crée l’iframe qui contiendra le clavier
   const keyboardIframe = document.createElement('iframe');
-  keyboardIframe.src = chrome.runtime.getURL('clavier.html');
+  keyboardIframe.src = chrome.runtime.getURL('mk_ext_clavier.html');
   keyboardIframe.style.position = 'fixed';
   keyboardIframe.style.top = '0';
   keyboardIframe.style.right = '-43%'; // Initialement caché
@@ -94,3 +94,4 @@
     }
   });
 })();
+
